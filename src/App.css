@@ -49,3 +49,37 @@ button:hover {
   padding: 10px;
   text-align: left;
 }
+
+.error-boundary {
+  padding: 20px;
+  background-color: #fdd;
+  border: 1px solid #f99;
+  border-radius: 4px;
+  margin: 10px;
+  text-align: left;
+}
+
+.post a {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.post {
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: scale(1.02);
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
