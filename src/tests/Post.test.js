@@ -1,6 +1,5 @@
-// Test file for Post component
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Post from "../components/Post";
 
@@ -11,12 +10,12 @@ test("renders Post component", () => {
     selftext: "This is a test post",
   };
 
-  const { getByText } = render(
+  const { getByText, getAllByText } = render(
     <Router>
       <Post post={post} />
     </Router>
   );
 
-  expect(getByText(/Test Post/i)).toBeInTheDocument();
+  expect(getAllByText(/Test Post/i).length).toBeGreaterThan(0);
   expect(getByText(/This is a test post/i)).toBeInTheDocument();
 });

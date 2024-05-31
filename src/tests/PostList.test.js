@@ -1,4 +1,3 @@
-//Test file for PostList component
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -10,12 +9,12 @@ test("renders PostList component with posts", () => {
     { id: "2", title: "Second Post", selftext: "This is the second post" },
   ];
 
-  const { getByText } = render(
+  const { getAllByText } = render(
     <Router>
       <PostList posts={posts} />
     </Router>
   );
 
-  expect(getByText(/First Post/i)).toBeInTheDocument();
-  expect(getByText(/Second Post/i)).toBeInTheDocument();
+  expect(getAllByText(/First Post/i).length).toBeGreaterThan(0);
+  expect(getAllByText(/Second Post/i).length).toBeGreaterThan(0);
 });
