@@ -1,11 +1,11 @@
-import React from "react";
-import "./App.css";
-import RedditPosts from "./features/reddit/RedditPosts";
-import SearchBar from "./components/SearchBar";
-import CategoryFilter from "./components/CategoryFilter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import RedditPostDetail from "./features/reddit/RedditPostDetail";
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import RedditPosts from './features/reddit/RedditPosts';
+import SearchBar from './components/SearchBar';
+import CategoryFilter from './components/CategoryFilter';
+import ErrorBoundary from './components/ErrorBoundary';
+import RedditPostDetail from './features/reddit/RedditPostDetail';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (

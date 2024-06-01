@@ -63,12 +63,6 @@ header {
   text-align: left;
 }
 
-.post img, .post video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px 0;
-}
 
 .post a {
   text-decoration: none;

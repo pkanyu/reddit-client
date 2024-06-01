@@ -21,7 +21,7 @@ const RedditPostDetail = () => {
   const renderMedia = () => {
     if (post.is_video && post.media && post.media.reddit_video) {
       return (
-        <video controls>
+        <video className="post" controls>
           <source src={post.media.reddit_video.fallback_url} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -31,6 +31,7 @@ const RedditPostDetail = () => {
     if (post.preview && post.preview.images && post.preview.images[0]) {
       return (
         <img
+          className="post"
           src={post.preview.images[0].source.url.replace("&amp;", "&")}
           alt={post.title}
         />
@@ -43,7 +44,11 @@ const RedditPostDetail = () => {
       post.thumbnail !== "default"
     ) {
       return (
-        <img src={post.thumbnail.replace("&amp;", "&")} alt={post.title} />
+        <img
+          className="post"
+          src={post.thumbnail.replace("&amp;", "&")}
+          alt={post.title}
+        />
       );
     }
 
