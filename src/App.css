@@ -1,120 +1,16 @@
-/* General Styles */
+/* App.css */
+
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 header {
-  background-color: #333;
+  background-color: #282c34;
   padding: 20px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 
-.category-filter {
-  display: flex;
-  gap: 10px;
-}
-
-.category-filter button {
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: #ff9800;
-  color: white;
-  border-radius: 5px;
-}
-
-.category-filter button:hover {
-  background-color: #e68900;
-}
-
-.post-list {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.post {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin: 10px;
-  padding: 10px;
-  text-align: left;
-  width: 80%;
-  max-width: 600px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.post:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.error-boundary {
-  padding: 20px;
-  background-color: #fdd;
-  border: 1px solid #f99;
-  border-radius: 4px;
-  margin: 10px;
-  text-align: left;
-}
-
-.post img, .post video, .post-media {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post a {
-  text-decoration: none;
-  color: #ff9800;
-}
-
-.post a:hover {
-  text-decoration: underline;
-}
-
-.post-actions {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-}
-
-.upvote, .downvote {
-  padding: 5px 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-
-.upvote {
-  background-color: #4caf50;
-  color: white;
-}
-
-.upvote:hover {
-  background-color: #45a045;
-}
-
-.downvote {
-  background-color: #f44336;
-  color: white;
-}
-
-.downvote:hover {
-  background-color: #e53935;
-}
-
-/* Search Bar Styles */
 form {
   display: flex;
   justify-content: center;
@@ -135,36 +31,116 @@ button {
   font-size: 16px;
   border: 1px solid #ccc;
   border-left: none;
-  background-color: #ff9800;
+  background-color: #ff4500;
   color: white;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #e68900;
+  background-color: #ff6347;
 }
 
-/* Comments Section */
-.comments {
-  list-style-type: none;
-  padding: 0;
+.nav-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.nav-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #ff4500;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-bar button:hover {
+  background-color: #ff6347;
+}
+
+.post-list {
+  padding: 20px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: scale(1.02);
+}
+
+.error-boundary {
+  padding: 20px;
+  background-color: #fdd;
+  border: 1px solid #f99;
+  border-radius: 4px;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.post a {
+  text-decoration: none;
+  color: #ff4500;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.post img, .post video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.upvote, .downvote {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.upvote:hover {
+  background-color: green;
+  color: white;
+}
+
+.downvote:hover {
+  background-color: red;
+  color: white;
+}
+
+.comments {
+  list-style: none;
+  padding: 0;
 }
 
 .comments li {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  margin: 10px auto;
   padding: 10px;
-  margin: 10px 0;
   width: 80%;
   max-width: 600px;
-}
-
-.comments li p {
-  margin: 0;
+  text-align: left;
 }
