@@ -2,14 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
-  const handleUpvote = () => {
-    // Implement upvote logic
-  };
-
-  const handleDownvote = () => {
-    // Implement downvote logic
-  };
-
   const renderMedia = () => {
     if (post.is_video && post.media && post.media.reddit_video) {
       return (
@@ -21,7 +13,22 @@ const Post = ({ post }) => {
     }
 
     if (post.preview && post.preview.images && post.preview.images[0]) {
-      return <img src={post.preview.images[0].source.url} alt={post.title} />;
+      return (
+        <img
+          src={post.preview.images[0].source.url.replace("&amp;", "&")}
+          alt={post.title}
+        />
+      );
+    }
+
+    if (
+      post.thumbnail &&
+      post.thumbnail !== "self" &&
+      post.thumbnail !== "default"
+    ) {
+      return (
+        <img src={post.thumbnail.replace("&amp;", "&")} alt={post.title} />
+      );
     }
 
     return null;
@@ -35,12 +42,8 @@ const Post = ({ post }) => {
       {renderMedia()}
       <p>{post.selftext}</p>
       <div className="post-actions">
-        <button onClick={handleUpvote} className="upvote">
-          Upvote
-        </button>
-        <button onClick={handleDownvote} className="downvote">
-          Downvote
-        </button>
+        <button className="upvote">Upvote</button>
+        <button className="downvote">Downvote</button>
       </div>
     </div>
   );
