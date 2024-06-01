@@ -146,6 +146,9 @@ button:hover {
 .comments {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .comments li {
@@ -154,6 +157,8 @@ button:hover {
   border-radius: 4px;
   padding: 10px;
   margin: 10px 0;
+  width: 80%;
+  max-width: 600px;
 }
 
 .comments li p {
