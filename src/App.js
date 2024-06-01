@@ -1,28 +1,35 @@
-import React from 'react';
-import './App.css';
-import RedditPosts from './features/reddit/RedditPosts';
-import SearchBar from './components/SearchBar';
-import CategoryFilter from './components/CategoryFilter';
-import ErrorBoundary from './components/ErrorBoundary';
-import RedditPostDetail from './features/reddit/RedditPostDetail';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RedditPosts from "./features/reddit/RedditPosts";
+import RedditPostDetail from "./features/reddit/RedditPostDetail";
+import SearchBar from "./components/SearchBar";
+import CategoryFilter from "./components/CategoryFilter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import "./App.css";
 
 function App() {
   return (
-    <ErrorBoundary>
-      <div className="App">
-        <header>
-          <SearchBar />
-          <CategoryFilter />
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<RedditPosts />} />
-            <Route path="/post/:postId" element={<RedditPostDetail />} />
-          </Routes>
-        </main>
-      </div>
-    </ErrorBoundary>
+      <ErrorBoundary>
+        <div className="App">
+          <header>
+            <SearchBar />
+          </header>
+          <main>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <CategoryFilter />
+                    <RedditPosts />
+                  </>
+                }
+              />
+              <Route path="/post/:postId" element={<RedditPostDetail />} />
+            </Routes>
+          </main>
+        </div>
+      </ErrorBoundary>
   );
 }
 

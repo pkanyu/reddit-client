@@ -63,6 +63,16 @@ header {
   text-align: left;
 }
 
+.post img, .post video, .post-media {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .post a {
   text-decoration: none;
