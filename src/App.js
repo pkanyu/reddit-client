@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import RedditPosts from "./features/reddit/RedditPosts";
 import RedditPostDetail from "./features/reddit/RedditPostDetail";
 import SearchBar from "./components/SearchBar";
