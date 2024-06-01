@@ -8,11 +8,13 @@ const initialState = {
   error: null,
 };
 
-// Async thunk to fetch Reddit data
+// Async thunk to fetch Reddit data based on category
 export const fetchRedditData = createAsyncThunk(
   "reddit/fetchRedditData",
-  async () => {
-    const response = await axios.get("https://www.reddit.com/r/popular.json");
+  async (category = "popular") => {
+    const response = await axios.get(
+      `https://www.reddit.com/r/${category}.json`
+    );
     return response.data.data.children.map((post) => post.data);
   }
 );
