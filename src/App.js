@@ -1,5 +1,5 @@
 import React from "react";
-import {  Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RedditPosts from "./features/reddit/RedditPosts";
 import RedditPostDetail from "./features/reddit/RedditPostDetail";
 import SearchBar from "./components/SearchBar";
@@ -9,27 +9,24 @@ import "./App.css";
 
 function App() {
   return (
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <Router>
         <div className="App">
           <header>
             <SearchBar />
+            <Routes>
+              <Route path="/" element={<CategoryFilter />} />
+            </Routes>
           </header>
           <main>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <CategoryFilter />
-                    <RedditPosts />
-                  </>
-                }
-              />
+              <Route path="/" element={<RedditPosts />} />
               <Route path="/post/:postId" element={<RedditPostDetail />} />
             </Routes>
           </main>
         </div>
-      </ErrorBoundary>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

@@ -63,7 +63,7 @@ const RedditPostDetail = () => {
     <div>
       <h2>{post.title}</h2>
       {renderMedia()}
-      <p>{post.selftext}</p>
+      <p className="post">{post.selftext}</p>
       <div>
         <a href={post.url} target="_blank" rel="noopener noreferrer">
           Read more
